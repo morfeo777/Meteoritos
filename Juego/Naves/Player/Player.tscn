@@ -11,6 +11,9 @@ radius = 35.5
 
 [node name="Player" type="RigidBody2D"]
 position = Vector2( 105.138, 117.262 )
+z_index = 50
+z_as_relative = false
+collision_mask = 20
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
 can_sleep = false
