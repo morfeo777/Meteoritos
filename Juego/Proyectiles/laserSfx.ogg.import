@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/laserSfx.ogg-d45cbd8261f80166e2788f46cf9ccd9e.oggstr"
+
+[deps]
+
+source_file="res://Juego/Proyectiles/laserSfx.ogg"
+dest_files=[ "res://.import/laserSfx.ogg-d45cbd8261f80166e2788f46cf9ccd9e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
