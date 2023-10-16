@@ -72,6 +72,7 @@ antialiased = true
 [node name="CastingParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color( 1.5, 1.5, 1.5, 1 )
 show_behind_parent = true
+emitting = false
 lifetime = 0.3
 local_coords = false
 texture = ExtResource( 2 )
