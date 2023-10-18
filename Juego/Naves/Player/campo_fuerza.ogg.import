@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/campo_fuerza.ogg-c89da4f594e7187e1e17810a66748878.oggstr"
+
+[deps]
+
+source_file="res://Juego/Naves/Player/campo_fuerza.ogg"
+dest_files=[ "res://.import/campo_fuerza.ogg-c89da4f594e7187e1e17810a66748878.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

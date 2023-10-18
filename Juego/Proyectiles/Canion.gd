@@ -59,5 +59,8 @@ func set_puede_disparar(duenio_puede: bool) -> void:
 
 
 
+
+
+
 func _on_TimerEnfriamiento_timeout() -> void:
 	esta_enfriado = true

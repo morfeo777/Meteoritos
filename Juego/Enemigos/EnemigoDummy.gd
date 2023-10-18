@@ -1,5 +1,16 @@
 extends Node2D
 
+var hitpoints:float = 10.0
+
+func _process(delta: float) -> void:
+	$Canion.set_esta_disparando(true)
+
+func recibir_danio(danio: float) -> void:
+	hitpoints -= danio
+	print("Danio: ", danio)
+	print("HitPoints: ", hitpoints)
+	if hitpoints <= 0.0:
+		queue_free()
 
 
 
