@@ -20,8 +20,8 @@ var radio_danio:float = 4.0
 onready var fill := $FillLine2D
 onready var tween := $Tween
 onready var casting_particles := $CastingParticles2D
-onready var collision_particles := $CollisionParticles2D
-onready var beam_particles := $BeamParticles2D
+onready var collision_particles := $CollisionParticles2DN
+onready var beam_particles := $BeamParticles2DN
 onready var laser_sfx: AudioStreamPlayer2D = $LaserSfx
 
 onready var line_width: float = fill.width
@@ -75,7 +75,9 @@ func cast_beam(delta: float) -> void:
 
 	fill.points[1] = cast_point
 	beam_particles.position = cast_point * 0.5
-	beam_particles.process_material.emission_box_extents.x = cast_point.length() * 0.5
+	#beam_particles.emission_shape.x = cast_point.length() * 0.5
+	beam_particles.emission_rect_extents.x  = cast_point.length() * 0.5
+	#beam_particles.process_material.emission_box_extents.x = cast_point.length() * 0.5
 
 
 func appear() -> void:
