@@ -11,10 +11,11 @@ export var rango_tamanio_meteorito:Vector2 = Vector2(0.5, 2.2)
 	
 func spawnear_meteorito() -> void:
 	var alea_dir:float = aleatorizar_direccion()
-	print(alea_dir * direccion)
+	#print(alea_dir * direccion)
 	Eventos.emit_signal("spawn_meteorito", 
 	global_position, 
-	direccion * alea_dir,
+	#direccion * alea_dir,
+	direccion,
 	tamanio_meteorito_aleatorio())
 	
 func tamanio_meteorito_aleatorio() -> float:

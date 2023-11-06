@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rele_superactivado.ogg-78d7568fbb0b92641c737b11e2fd7005.oggstr"
+
+[deps]
+
+source_file="res://Juego/Estaciones/rele_superactivado.ogg"
+dest_files=[ "res://.import/rele_superactivado.ogg-78d7568fbb0b92641c737b11e2fd7005.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

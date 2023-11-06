@@ -11,6 +11,7 @@ var hitpoints:float
 var esta_en_sector:bool = true setget set_esta_en_sector
 var pos_spawn_original:Vector2
 var vel_spawn_original:Vector2
+var esta_destruido:bool = false
 
 onready var impacto_sfx:AudioStreamPlayer2D = $ImpactoSFX
 onready var animacion_impacto:AnimationPlayer = $AnimationPlayer
@@ -23,6 +24,7 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	if esta_en_sector:
 		return
 	var mi_transform:= state.get_transform()
+	mi_transform.origin = pos_spawn_original
 	linear_velocity = vel_spawn_original
 	state.set_transform(mi_transform)
 	esta_en_sector = true
@@ -30,7 +32,8 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 ## Metodos Custom
 func recibir_danio(danio: float) -> void:
 	hitpoints -= danio
-	if hitpoints <= 0:
+	if hitpoints <= 0 and not esta_destruido:
+		esta_destruido = true
 		destruir()
 	animacion_impacto.play("impacto")
 	impacto_sfx.play()
@@ -46,6 +49,7 @@ func set_esta_en_sector(valor:bool)	-> void:
 ##Constructor
 func crear(pos: Vector2, dir: Vector2, tamanio:float) -> void:
 	position = pos
+	pos_spawn_original = position
 	mass *= tamanio
 	$Sprite.scale = Vector2.ONE * tamanio
 	var radio:int = int($Sprite.texture.get_size().x / 2.3 * tamanio)
@@ -56,7 +60,7 @@ func crear(pos: Vector2, dir: Vector2, tamanio:float) -> void:
 	vel_spawn_original = linear_velocity
 	angular_velocity = (vel_ang_base / tamanio) * aleatorizar_velocidad()
 	hitpoints = hitpoints_base * tamanio
-	print("Hitpoints: ", hitpoints)
+	#print("Hitpoints: ", hitpoints)
 	
 ## Metodos Custom
 func aleatorizar_velocidad() -> float:

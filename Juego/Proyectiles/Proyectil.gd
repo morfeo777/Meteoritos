@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 
 ##Metodos Custom
 func daniar(otro_cuerpo: CollisionObject2D) -> void:
-	print(otro_cuerpo.name)
+	#print(otro_cuerpo.name)
 	#print(otro_cuerpo.owner.name)
 	if otro_cuerpo.has_method("recibir_danio"):
 		otro_cuerpo.recibir_danio(danio)
@@ -37,4 +37,5 @@ func _on_Proyectil_area_entered(area: Area2D) -> void:
 
 
 func _on_Proyectil_body_entered(body: Node) -> void:
+	#print(body.name)
 	daniar(body)

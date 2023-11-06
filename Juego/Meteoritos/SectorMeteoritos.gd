@@ -8,9 +8,11 @@ export var intervalo_spawn:float = 1.2
 # Atributos
 var spawners:Array
 
+
 ## Metodos
 func _ready() -> void:
 	almacenar_spawners()
+	conectar_seniales_detectores()
 	$SpawnTimer.wait_time = intervalo_spawn
 ## Constructor
 func crear(pos:Vector2, meteoritos:int) -> void:
@@ -20,7 +22,7 @@ func crear(pos:Vector2, meteoritos:int) -> void:
 ## Metodos Custom
 func conectar_seniales_detectores() -> void:
 	for detector in $DetectorFueraZona.get_children():
-		detector.connect("body_entered", self)
+		detector.connect("body_entered", self, "_on_detector_body_entered")
 
 func almacenar_spawners() -> void:
 	for spawner in $Spawners.get_children():
